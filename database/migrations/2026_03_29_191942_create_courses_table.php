@@ -13,6 +13,12 @@ return new class extends Migration
     {
         Schema::create('courses', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('coach_id')->constrained('users')->onDelete('cascade');
+            $table->string('title');
+            $table->text('description');
+            $table->dateTime('date');
+            $table->integer('duration'); // Duration in minutes
+            $table->integer('available_places');
             $table->timestamps();
         });
     }
@@ -24,4 +30,4 @@ return new class extends Migration
     {
         Schema::dropIfExists('courses');
     }
-};
+}; 

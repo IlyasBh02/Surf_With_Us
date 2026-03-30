@@ -12,7 +12,11 @@ return new class extends Migration
     public function up(): void
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->boolean('approved')->default(false);
+            // Add fields for coach profiles
+            $table->text('bio')->nullable()->after('coach_approved');
+            $table->text('description')->nullable()->after('bio');
+            $table->integer('years_experience')->nullable()->after('description');
+            $table->string('profile_picture')->nullable()->after('years_experience');
         });
     }
 
@@ -22,7 +26,7 @@ return new class extends Migration
     public function down(): void
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->dropColumn('approved');
+            $table->dropColumn(['bio', 'description', 'years_experience', 'profile_picture']);
         });
     }
 };
