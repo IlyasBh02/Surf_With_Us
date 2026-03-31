@@ -6,9 +6,6 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
-    /**
-     * Run the migrations.
-     */
     public function up(): void
     {
         Schema::create('courses', function (Blueprint $table) {
@@ -16,18 +13,19 @@ return new class extends Migration
             $table->foreignId('coach_id')->constrained('users')->onDelete('cascade');
             $table->string('title');
             $table->text('description');
+            $table->string('thumbnail')->nullable();
             $table->dateTime('date');
-            $table->integer('duration'); // Duration in minutes
+            $table->integer('duration');
             $table->integer('available_places');
+            $table->decimal('price', 8, 2)->default(45.00);
+            $table->enum('level', ['beginner', 'intermediate', 'advanced'])->default('beginner');
+            $table->string('location')->nullable();
             $table->timestamps();
         });
     }
 
-    /**
-     * Reverse the migrations.
-     */
     public function down(): void
     {
         Schema::dropIfExists('courses');
     }
-}; 
+};
