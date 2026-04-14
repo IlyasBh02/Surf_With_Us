@@ -66,7 +66,7 @@
                 <span class="block text-blue-400">Master the Art of Surfing</span>
             </h1>
             <p class="mt-6 text-xl text-white max-w-3xl mx-auto lg:mx-0">
-                Join the SurfHub community and learn from professional coaches. Book your surfing courses today and
+                Join the SURF WITH US community and learn from professional coaches. Book your surfing courses today and
                 experience the thrill of the ocean.
             </p>
             <div class="mt-10 flex flex-col sm:flex-row justify-center lg:justify-start space-y-4 sm:space-y-0 sm:space-x-4">
@@ -252,7 +252,7 @@
                     <i class="fa-solid fa-award text-blue-500 text-4xl"></i>
                 </span>
                 <h2 class="text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl">
-                    Why Choose SurfHub
+                    Why Choose SURF WITH US
                 </h2>
                 <p class="mt-4 max-w-2xl text-xl text-gray-500 mx-auto">
                     Experience the difference with our world-class coaching and premium learning environment.
@@ -339,7 +339,7 @@
                     <div class="absolute bottom-0 left-0 right-0 p-8 text-white">
                         <blockquote class="mt-4">
                             <p class="text-lg font-medium italic">
-                                "The coaches at SurfHub transformed my surfing skills in just a few sessions. Best decision
+                                "The coaches at SURF WITH US transformed my surfing skills in just a few sessions. Best decision
                                 I ever made!"
                             </p>
                             <footer class="mt-2 text-sm">
@@ -351,7 +351,7 @@
                                         <i class="fa-solid fa-star"></i>
                                         <i class="fa-solid fa-star"></i>
                                     </div>
-                                    <span class="ml-2">— Michael R., SurfHub Student</span>
+                                    <span class="ml-2">— Michael R., SURF WITH US Student</span>
                                 </div>
                             </footer>
                         </blockquote>
@@ -409,7 +409,7 @@
                 Ready to Catch Your First Wave?
             </h2>
             <p class="text-xl md:text-2xl text-white mb-10 max-w-3xl mx-auto">
-                Your surfing journey begins today. Join SurfHub and learn from the best coaches in the most beautiful
+                Your surfing journey begins today. Join SURF WITH US and learn from the best coaches in the most beautiful
                 beaches.
             </p>
             <div class="flex flex-col sm:flex-row justify-center gap-4">

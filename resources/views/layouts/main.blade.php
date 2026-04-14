@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>SurfHub - @yield('title', 'Catch Your Perfect Wave')</title>
+        <title>SURF WITH US - @yield('title', 'Catch Your Perfect Wave')</title>
         <!-- Tailwind CSS via CDN -->
         <script src="https://cdn.tailwindcss.com"></script>
         <!-- Alpine.js for dropdowns -->
@@ -50,7 +50,7 @@
                     <div class="flex items-center">
                         <div class="flex-shrink-0 flex items-center">
                             <!-- Logo (keeping SVG as requested) -->
-                            <span class="text-blue-600 font-bold text-2xl">SurfHub</span>
+                            <span class="text-blue-600 font-bold text-2xl">SURF WITH US</span>
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 ml-2 text-blue-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 10l-2 1m0 0l-2-1m2 1v2.5M20 7l-2 1m2-1l-2-1m0 0v2.5M14 4l-2-1-2 1M4 7l2-1M4 7l2 1M4 7v2.5M12 21l2-1m-2 1l-2-1m2 1v-2.5M6 18l-2-1v-2.5M18 18l2-1v-2.5" />
                             </svg>
@@ -193,7 +193,7 @@
                     <!-- Logo and Description -->
                     <div class="col-span-1 md:col-span-1">
                         <div class="flex items-center mb-4">
-                            <span class="text-blue-400 font-bold text-2xl">SurfHub</span>
+                            <span class="text-blue-400 font-bold text-2xl">SURF WITH US</span>
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 ml-2 text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 10l-2 1m0 0l-2-1m2 1v2.5M20 7l-2 1m2-1l-2-1m0 0v2.5M14 4l-2-1-2 1M4 7l2-1M4 7l2 1M4 7v2.5M12 21l2-1m-2 1l-2-1m2 1v-2.5M6 18l-2-1v-2.5M18 18l2-1v-2.5" />
                             </svg>
@@ -255,7 +255,7 @@
                             </p>
                             <p class="flex items-center text-gray-400">
                                 <i class="fa-solid fa-envelope w-5 text-blue-400 mr-2"></i> 
-                                info@surfhub.com
+                                info@surfwithus.com
                             </p>
                             <p class="flex items-center text-gray-400">
                                 <i class="fa-solid fa-clock w-5 text-blue-400 mr-2"></i> 
@@ -266,7 +266,7 @@
                 </div>
                 
                 <div class="mt-12 pt-8 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center">
-                    <p class="text-gray-400 text-sm">© 2023 SurfHub. All rights reserved.</p>
+                    <p class="text-gray-400 text-sm">© 2023 SURF WITH US. All rights reserved.</p>
                     <div class="mt-4 md:mt-0 flex space-x-4">
                         <a href="#" class="text-sm text-gray-400 hover:text-white">Privacy</a>
                         <a href="#" class="text-sm text-gray-400 hover:text-white">Terms</a>

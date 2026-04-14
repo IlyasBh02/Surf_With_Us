@@ -233,7 +233,7 @@
                     
                     <!-- Contact Support -->
                     <div>
-                        <a href="mailto:support@surfhub.com" class="w-full px-4 py-2 bg-gray-200 text-gray-700 rounded-md hover:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2 inline-block text-center">
+                        <a href="mailto:support@surfwithus.com" class="w-full px-4 py-2 bg-gray-200 text-gray-700 rounded-md hover:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2 inline-block text-center">
                             <i class="fa-solid fa-headset mr-2"></i> Contact Support
                         </a>
                     </div>
