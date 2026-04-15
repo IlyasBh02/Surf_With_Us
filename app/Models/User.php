@@ -47,6 +47,11 @@ class User extends Authenticatable
         return $this->hasMany(Reservation::class, 'surfeur_id');
     }
 
+    public function notifications()
+    {
+        return $this->hasMany(Notification::class);
+    }
+
     public function isAdmin(): bool   { return $this->role === 'admin'; }
     public function isCoach(): bool   { return $this->role === 'coach'; }
     public function isSurfeur(): bool { return $this->role === 'surfeur'; }

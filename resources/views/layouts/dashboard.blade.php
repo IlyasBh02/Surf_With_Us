@@ -80,7 +80,34 @@
                     </a>
                 </div>
                 
-                <div class="flex items-center">
+                <div class="flex items-center gap-3">
+                    <!-- Notification Bell -->
+                    @php $unreadCount = Auth::user()->notifications()->where('read', false)->count(); @endphp
+                    <div x-data="{ open: false }" class="relative">
+                        <button @click="open = !open; $nextTick(() => { if(open) markNotificationsRead() })" class="relative p-2 text-gray-500 hover:text-blue-600 focus:outline-none">
+                            <i class="fa-solid fa-bell text-xl"></i>
+                            @if($unreadCount > 0)
+                                <span class="absolute top-1 right-1 h-4 w-4 bg-red-500 text-white text-xs rounded-full flex items-center justify-center">{{ $unreadCount }}</span>
+                            @endif
+                        </button>
+                        <div x-show="open" @click.away="open = false"
+                             class="absolute right-0 mt-2 w-80 bg-white rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 z-50 overflow-hidden"
+                             style="display:none">
+                            <div class="px-4 py-3 border-b border-gray-100 font-semibold text-gray-700 text-sm">Notifications</div>
+                            <div class="max-h-72 overflow-y-auto divide-y divide-gray-100">
+                                @forelse(Auth::user()->notifications()->latest()->take(10)->get() as $notif)
+                                    <div class="px-4 py-3 {{ $notif->read ? 'bg-white' : 'bg-blue-50' }}">
+                                        <p class="text-sm font-medium text-gray-800">{{ $notif->title }}</p>
+                                        <p class="text-xs text-gray-500 mt-1">{{ $notif->message }}</p>
+                                        <p class="text-xs text-gray-400 mt-1">{{ $notif->created_at->diffForHumans() }}</p>
+                                    </div>
+                                @empty
+                                    <div class="px-4 py-6 text-center text-sm text-gray-500">No notifications yet.</div>
+                                @endforelse
+                            </div>
+                        </div>
+                    </div>
+
                     <!-- User Menu -->
                     <div x-data="{ isOpen: false }" class="ml-3 relative">
                         <div>
@@ -223,6 +250,19 @@
         });
     </script>
     
+    <script>
+        function markNotificationsRead() {
+            fetch('{{ route('notifications.mark-read') }}', {
+                method: 'POST',
+                headers: { 'X-CSRF-TOKEN': '{{ csrf_token() }}', 'Content-Type': 'application/json' }
+            }).then(() => {
+                // Remove red badge
+                const badge = document.querySelector('.fa-bell').nextElementSibling;
+                if (badge) badge.remove();
+            });
+        }
+    </script>
+
     @yield('scripts')
 </body>
 </html> 
