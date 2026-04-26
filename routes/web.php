@@ -53,6 +53,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/coach/courses/create',       [CoachCourseController::class, 'create'])->name('coach.courses.create');
     Route::post('/coach/courses',             [CoachCourseController::class, 'store'])->name('coach.courses.store');
     Route::get('/coach/courses/{course}',     [CoachCourseController::class, 'show'])->name('coach.courses.show');
+    Route::get('/coach/courses/{course}/reservations', [CoachCourseController::class, 'show'])->name('coach.course.reservations');
     Route::get('/coach/courses/{course}/edit',[CoachCourseController::class, 'edit'])->name('coach.courses.edit');
     Route::put('/coach/courses/{course}',     [CoachCourseController::class, 'update'])->name('coach.courses.update');
     Route::delete('/coach/courses/{course}',  [CoachCourseController::class, 'destroy'])->name('coach.courses.destroy');
