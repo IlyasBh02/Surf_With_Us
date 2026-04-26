@@ -207,10 +207,17 @@
                                 <div class="flex items-center">
                                     <span class="text-sm text-gray-600 mr-2">{{ $remainingPlaces }} places left</span>
                                     @if($remainingPlaces > 0)
-                                        <a href="{{ route('courses.show', $course->id) }}"
-                                            class="inline-flex items-center px-3 py-1.5 border border-transparent text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
-                                            <i class="fa-solid fa-bookmark mr-1"></i> Book Now
-                                        </a>
+                                        @auth
+                                            <a href="{{ route('courses.show', $course->id) }}"
+                                                class="inline-flex items-center px-3 py-1.5 border border-transparent text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
+                                                <i class="fa-solid fa-bookmark mr-1"></i> Book Now
+                                            </a>
+                                        @else
+                                            <a href="{{ route('register') }}"
+                                                class="inline-flex items-center px-3 py-1.5 border border-transparent text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
+                                                <i class="fa-solid fa-user-plus mr-1"></i> Sign Up to Book
+                                            </a>
+                                        @endauth
                                     @else
                                         <a href="#"
                                             class="inline-flex items-center px-3 py-1.5 border border-transparent text-sm font-medium rounded-md text-white bg-gray-400 cursor-not-allowed">

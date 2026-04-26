@@ -135,7 +135,7 @@
                                     <i class="fa-solid fa-gauge-high mr-2"></i> Dashboard
                                 </a>
                                 @if(Auth::user()->role === 'surfeur')
-                                    <a href="{{ route('surfer.profile') }}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">
+                                    <a href="{{ route('surfeur.profile') }}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">
                                         <i class="fa-solid fa-user mr-2"></i> My Profile
                                     </a>
                                 @elseif(Auth::user()->role === 'coach')

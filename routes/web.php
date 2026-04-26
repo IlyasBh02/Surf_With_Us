@@ -11,8 +11,10 @@ use App\Http\Controllers\NotificationController;
 // Home
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/courses', [HomeController::class, 'index'])->name('courses.browse');
-Route::get('/courses/{course}', fn($course) => abort(404))->name('courses.show');
+Route::get('/courses/{course}', [App\Http\Controllers\CourseController::class, 'show'])->name('courses.show');
+Route::post('/courses/{course}/book', [App\Http\Controllers\CourseController::class, 'book'])->name('courses.book')->middleware('auth');
 Route::get('/coaches/{user}',   fn($user)   => abort(404))->name('courses.coach');
+Route::get('/coach/{user}/courses', fn($user) => abort(404))->name('coach.public.courses');
 
 // Auth (guests only)
 Route::middleware('guest')->group(function () {
