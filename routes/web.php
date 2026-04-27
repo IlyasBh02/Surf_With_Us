@@ -6,6 +6,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\CoachCourseController;
+use App\Http\Controllers\CoachReservationController;
 use App\Http\Controllers\NotificationController;
 
 // Home
@@ -49,7 +50,8 @@ Route::middleware('auth')->group(function () {
     // ── Coach ──────────────────────────────────────────────────────────────
     Route::get('/coach/dashboard', [DashboardController::class, 'coach'])->name('coach.dashboard');
     Route::get('/coach/profile',   fn() => abort(404))->name('coach.profile');
-    Route::get('/coach/reservations', fn() => abort(404))->name('coach.reservations');
+    Route::get('/coach/reservations', [CoachReservationController::class, 'index'])->name('coach.reservations');
+    Route::post('/coach/reservations/{reservation}/status', [CoachReservationController::class, 'updateStatus'])->name('coach.reservation.status');
 
     Route::get('/coach/courses',              [CoachCourseController::class, 'index'])->name('coach.courses.index');
     Route::get('/coach/courses/create',       [CoachCourseController::class, 'create'])->name('coach.courses.create');
